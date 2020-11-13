@@ -15,9 +15,14 @@ public class Swap<T> {
     }
 
     public void swapElementsArr(int i, int j){  //меняет i-й элемент массива с j-ым местами
-        T buffer = this.array[j];
-        this.array[j] = this.array[i];
-        this.array[i] = buffer;
+        try {
+            T buffer = this.array[j];
+            this.array[j] = this.array[i];
+            this.array[i] = buffer;
+        } catch (ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
+
     }
 
     public void toArrayList(ArrayList<T> arrList){  //преобразует массив в ArrayList
